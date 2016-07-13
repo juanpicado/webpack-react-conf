@@ -1,7 +1,7 @@
 var DefaultConfig = require('webpack-babel-conf');
 var _ = require('lodash');
 
-var babelConf = {
+var reactConf = {
     module: {
         loaders: [
           { test: /\.css$/, loader: "style-loader!css-loader" },
@@ -20,5 +20,5 @@ var babelConf = {
 };
 
 module.exports = function() {
-    return _.merge(DefaultConfig.call(null, ...arguments), babelConf);
+    return _.merge(DefaultConfig.call(null, ...arguments), reactConf);
 };
