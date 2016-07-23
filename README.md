@@ -2,6 +2,8 @@
 
 This module helps to reduce the overloaded webpack configuration using **babel and JSX** as a default loader, dependencies management.
 
+    npm install webpack-react-conf --save-dev
+
 ## Usage
 
 * Create a file in the root folder `webpack.conf.js` and add the following code.
