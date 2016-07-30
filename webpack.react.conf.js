@@ -8,6 +8,10 @@ var reactConf = {
           { test: /\.png$/, loader: "url-loader?limit=100000" },
           { test: /\.jpg$/, loader: "file-loader" },
           {
+                test: /\.scss$/,
+                loaders: ['style', 'css', 'sass']
+          },
+          {
             test: /.jsx?$/,
             loader: 'babel',
             exclude: /node_modules/,
@@ -16,6 +20,10 @@ var reactConf = {
             }
         }
         ]
+    },
+    resolve: {
+        modulesDirectories: ['node_modules', 'bower_components'],
+        extensions: ['.css', '.png', '.jpg', '.scss', '.js', '.jsx']
     }
 };
 
