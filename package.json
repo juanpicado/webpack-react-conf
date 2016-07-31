@@ -1,6 +1,6 @@
 {
   "name": "webpack-react-conf",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "webpack react configuration",
   "main": "index.js",
   "scripts": {
