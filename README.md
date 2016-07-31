@@ -3,6 +3,16 @@
 This module helps to reduce the overloaded webpack configuration using **babel and JSX** as a default loader, dependencies management.
 
     npm install webpack-react-conf --save-dev
+    
+The configuration contains the following loaders:
+
+* scss-loader (.scss) `node-sass required`
+* file-loader
+* style-loader (css modules)
+* postcss-loader
+* url-loader (jpg and png)
+
+It bundle a file (style.css) with all components that use styles as references.
 
 ## Usage
 
@@ -12,6 +22,7 @@ This module helps to reduce the overloaded webpack configuration using **babel a
     const configuration = require('webpack-react-conf');
     const webpackConf = configuration(
     './src/index.jsx',
+    './build',
     'index.min.js',
     'myAppFoo',
     'umd');
@@ -50,5 +61,9 @@ The module returns a function, it accepts 4 parameters.
 3. The name of the library
 4. The library target
 
+#### Examples
 
-This module extend [webpack-babel-conf](https://github.com/juanpicado/webpack-babel-conf)
+[https://github.com/juanpicado/webpack-examples/tree/master/react-bundle](https://github.com/juanpicado/webpack-examples/tree/master/react-bundle)
+
+
+This module extends [webpack-babel-conf](https://github.com/juanpicado/webpack-babel-conf)
