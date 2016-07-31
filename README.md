@@ -49,7 +49,7 @@ export default HelloWorld;
 
 
 * Run webpack in the root folder `webpack --config webpack.conf.js`
-* See output file on `dist/index.min.js`
+* Look the output file at `build/index.min.js`
 * Test your component in a web server
 
 #### Options
