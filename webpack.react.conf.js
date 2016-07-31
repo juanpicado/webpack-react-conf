@@ -1,12 +1,15 @@
-var DefaultConfig = require('webpack-babel-conf');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var _ = require('lodash');
+const DefaultConfig = require('webpack-babel-conf');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const _ = require('lodash');
+const path = require('path');
 
-var query = { 
+const query = { 
     presets: ['es2015', 'react']
 };
-var styling = ['style', 'css'];
-var reactConf = {
+const styling = ['style', 'css'];
+
+module.exports = function(entryPoint, outputPath, outputName, library, libraryTarget) {
+    var reactConf = {
     module: {
         loaders: [          
           { test: /\.png$/, loader: "url-loader?limit=100000" , exclude: /node_modules/ },
@@ -18,13 +21,11 @@ var reactConf = {
         ]
     },
     plugins: [
-        new ExtractTextPlugin('style.css', { allChunks: true })
-    ],
+            new ExtractTextPlugin(path.join('style.css'), { allChunks: true })
+        ],
     resolve: {
         modulesDirectories: ['node_modules', 'bower_components']    
     }
-};
-
-module.exports = function() {
+    };
     return _.merge(DefaultConfig.call(null, ...arguments), reactConf);
 };
